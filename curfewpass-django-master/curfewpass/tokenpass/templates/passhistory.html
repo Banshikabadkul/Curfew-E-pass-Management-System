@@ -1,0 +1,104 @@
+{% extends "main.html" %}
+{% block content %}
+{% load static %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+    <meta name="author" content="themefisher.com">
+
+    <title>PASS HISTORY</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'userhome/images/favicon.ico' %}" />
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{% static 'userhome/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="{% static 'userhome/plugins/icofont/icofont.min.css' %}">
+    <!-- Slick Slider  CSS -->
+    <link rel="stylesheet" href="{% static 'userhome/plugins/slick-carousel/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'userhome/plugins/slick-carousel/slick/slick-theme.css' %}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'userhome/css/style.css' %}">
+
+</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  </head>
+  <body background="{% static 'login/images/bg.jpg' %}">
+    <div class="d-flex justify-content-center mt-5">  
+    <div class="card-container">
+      <!-- <span class="pro">PENDING</span> -->
+      <!-- <span class="pro-green">APPROVED</span> -->
+      <img
+        class="round"
+        src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-vector-id1209654046?k=20&m=1209654046&s=612x612&w=0&h=Atw7VdjWG8KgyST8AXXJdmBkzn0lvgqyWod9vTb2XoE="
+        alt="user"
+        width="30%"
+      />
+      <h3 class="text-white">{{user.first_name}} {{user.last_name}}</h3>
+      
+      <!-- <div class="buttons">
+        <button class="primary">Accept</button>
+        <button class="primary ghost">Deny</button>
+      </div> -->
+      <div class="skills">
+        
+        {% if passes %}
+        {% for row in passes %}
+        <h6 class="text-white" >Personal Details</h6>
+        <ul>
+          <li>Email ID : {{ row.email }}</li>
+          <li>Address : {{ row.address }}</li>
+          <li>Contact Number : {{ row.contact }}</li>
+          <li>City : {{ row.city }}</li>
+          <li>State : {{ row.state }}</li>
+          <li>Date of Birth : {{ row.date_of_birth }}</li>
+          <li>Start Date : {{ row.start_date }}</li>
+          <li>Start Location : {{ row.start_location }}</li>
+          <li>End Location : {{ row.end_location }}</li>
+          <li>Reason : {{ row.reason }}</li>
+        </ul>
+        {% endfor %}
+        {% else %}
+
+        <h4 class="text-white">No Pass History</h4>
+            
+        {% endif %}
+      </div>
+    </div>
+    </div>
+</div>
+  </body>
+</html>
+
+
+<!-- Main jQuery -->
+<script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+<!-- Bootstrap 4.3.2 -->
+<script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/counterup/jquery.easing.js' %}"></script>
+<!-- Slick Slider -->
+<script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+<!-- Counterup -->
+<script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+
+<script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+<script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+<!-- Google Map -->
+<script src="{% static 'plugins/google-map/map.js' %}"></script>
+<script
+    src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap' %}"></script>
+
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
+
+{% endblock %}
